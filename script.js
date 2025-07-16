@@ -1,25 +1,21 @@
-const btn = document.getElementById('catch-btn');
-const scoreDisplay = document.getElementById('score');
-let score = 0;
+document.addEventListener('DOMContentLoaded', () => {
+  const images = document.querySelectorAll('.car-card img');
+  const options = {
+    root: null,
+    threshold: 0.1
+  };
 
-function moveButton() {
-  const padding = 20;
-  const maxX = window.innerWidth - btn.offsetWidth - padding;
-  const maxY = window.innerHeight - btn.offsetHeight - padding;
-  const randX = Math.random() * maxX;
-  const randY = Math.random() * maxY;
-  btn.style.transform = `translate(${randX}px, ${randY}px)`;
-}
+  const onIntersection = (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        const src = img.getAttribute('src');
+        img.setAttribute('loading', 'lazy');
+        observer.unobserve(img);
+      }
+    });
+  };
 
-btn.addEventListener('click', () => {
-  score++;
-  scoreDisplay.textContent = score;
-  moveButton();
-});
-
-// no início, posiciona o botão no centro
-window.addEventListener('load', () => {
-  const centerX = (window.innerWidth - btn.offsetWidth) / 2;
-  const centerY = (window.innerHeight - btn.offsetHeight) / 2;
-  btn.style.transform = `translate(${centerX}px, ${centerY}px)`;
+  const observer = new IntersectionObserver(onIntersection, options);
+  images.forEach(img => observer.observe(img));
 });

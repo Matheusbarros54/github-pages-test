@@ -1,17 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jogo Catch the Button</title>
+  <title>Galeria de Carros</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="game-container">
-    <h1>Catch the Button!</h1>
-    <p>Pontuação: <span id="score">0</span></p>
-    <button id="catch-btn">Clique em mim!</button>
-  </div>
+  <header class="site-header">
+    <h1>Galeria de Carros</h1>
+    <p>Explore alguns dos automóveis mais icônicos e recentes</p>
+  </header>
+
+  <main class="gallery-container">
+    <article class="car-card">
+      <img src="https://source.unsplash.com/featured/?car,red" alt="Carro Vermelho">
+      <div class="card-content">
+        <h2>Carro Vermelho Esportivo</h2>
+        <p>Design aerodinâmico e desempenho impressionante.</p>
+      </div>
+    </article>
+
+    <article class="car-card">
+      <img src="https://source.unsplash.com/featured/?car,blue" alt="Carro Azul">
+      <div class="card-content">
+        <h2>Sedan Azul Luxo</h2>
+        <p>Conforto e tecnologia de ponta para sua família.</p>
+      </div>
+    </article>
+
+    <article class="car-card">
+      <img src="https://source.unsplash.com/featured/?electric,car" alt="Carro Elétrico">
+      <div class="card-content">
+        <h2>Carro Elétrico Futurista</h2>
+        <p>Zero emissões e alta eficiência energética.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Galeria de Carros. Todos os direitos reservados.</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
